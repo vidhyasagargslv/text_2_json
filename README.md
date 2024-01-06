@@ -1,8 +1,52 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Name
 
-Currently, two official plugins are available:
+This is a Text to json project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. Clone the repository.
+2. Install the dependencies using `npm install`.
+3. Start the development server using `npm run dev`.
+
+## Features
+
+- Feature 1: Easy to convert given text to json format.
+- Feature 2: Implemented two types of themes .
+             1.Dark theme (default)
+             2.valentine theme
+
+
+## Usage
+
+
+The Converter component provides a form where you can enter details for a project, 
+such as title, image link, description, website link, and category. 
+When you click the "Convert" button, the form data will be converted to JSON format and displayed below the form.
+
+You can also copy the generated JSON to the clipboard by clicking the "COPY" button. If the JSON is successfully copied, a success message will be displayed.
+
+## Contributing
+
+If you would like to contribute to this project, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
+
+
+
+## Contact
+
+If you have any questions or suggestions, please feel free to contact us at [vidhyasagargslv@example.com](mailto:email@example.com).
+
+## Deployment
+
+The application is deployed on Netlify. You can access it at the following URL:
+
+[](https://your-app.netlify.app)
+
