@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 export default function Converter() {
   const [jsonData, setJsonData] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   function convertToJSON() {
     event.preventDefault();
@@ -33,16 +34,26 @@ export default function Converter() {
     textArea.select();
     document.execCommand('copy');
     document.body.removeChild(textArea);
-    alert('JSON copied to clipboard!');
+    // alert('JSON copied to clipboard!');
+    setShowAlert(true);
   }
+  useEffect(() => {
+    if (showAlert) {
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 1000); // close the alert after 2 seconds
+
+      return () => clearTimeout(timer); // cleanup on unmount
+    }
+  }, [showAlert]);
 
   return (
     <div>
       <div className="theme">
       <label className="flex cursor-pointer gap-2">
           <span className="label-text">Current</span> 
-            <input type="checkbox" value="light" className="toggle theme-controller"/>
-          <span className="label-text">Light</span> 
+            <input type="checkbox" value="valentine" className="toggle theme-controller"/>
+          <span className="label-text">valentine</span> 
       </label>
       </div>
       <h1 className='font-bold text-5xl '>TEXT TO JSON</h1>
@@ -118,12 +129,22 @@ export default function Converter() {
 
         <div id='jsonOutput' className='my-5'>
           {jsonData && <pre>{JSON.stringify(jsonData, null, 2)}</pre>}
-        </div>
+        </div> <br /><br />
+
+        {showAlert && <div>
+          <div role="alert" className="alert alert-success">
+              <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>Data is copied to clipboard</span>
+          </div>
+          
+          </div>}
         
-        <button onClick={copyToClipboard} className='btn btn-outline btn-primary my-6'>
+        <button onClick={copyToClipboard} className='btn btn-outline btn-primary px-8 my-6 mr-11'>
           COPY
         </button>
-        <button type='reset' className='btn btn-ghost '>RESET</button>
+        
+
+        <button type='reset' className='btn btn-warning btn-outline px-7'>RESET</button>
       </form>
     </div>
   );
