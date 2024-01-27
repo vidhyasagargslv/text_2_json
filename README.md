@@ -48,5 +48,5 @@ If you have any questions or suggestions, please feel free to contact us at [vid
 
 The application is deployed on Netlify. You can access it at the following URL:
 
-[https://text-2-json.vercel.app/](https://your-app.netlify.app)
+[Deloy link](https://text-2-json.vercel.app/)
 
